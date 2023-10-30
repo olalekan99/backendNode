@@ -6,6 +6,7 @@ const userRouter = require("./routes/userRouter");
 const db = require("./config/db");
 const { notFound, handleError } = require("./middleware/errorHandler");
 
+
 const app = express();
 app.use(cors());
 dotenv.config();
@@ -26,6 +27,15 @@ app.use("/api/v1/user", userRouter)
 
 app.use(notFound);
 app.use(handleError);
+
+
+// to prevent unspecified route for 
+// app.all("*", (req, res, next) => {
+//     res.status(404).json({
+//         status: "failed",
+//         message: `can't find ${req.originalUrl} pn the server`
+//     })
+// })
 
 //  Connecting to the Server
 

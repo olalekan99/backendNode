@@ -7,7 +7,7 @@ const notFound = (req, res, next) => {
 };
 
 
-// Error Handler
+// Error Handling Middleware(Global handling Middleware)
 
 const handleError = (err, req, res, next) =>{
     const statuscode = res.statusCode ? res.statusCode : 500;
